@@ -45,3 +45,7 @@ brews:
     homepage: "https://github.com/achill06/git-zen"
     description: "An interactive, fuzzy-searchable git branch manager"
     license: "MIT"
+    custom_block: |
+      def post_install
+        generate_completions_from_executable(bin/"git-zen", "completion")
+      end
