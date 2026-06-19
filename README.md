@@ -14,32 +14,19 @@ An open-source Go CLI extension suite offering a blazing-fast, interactive termi
 
 ## Installation
 
-### 1. Prerequisites
-To view live Pull Request badges, ensure you have the [GitHub CLI](https://cli.github.com/) installed and authenticated on your machine:
+### 1. Download Binaries (Recommended)
 
-```bash
-gh auth login
-```
+Head over to the [GitHub Releases](https://github.com/achill06/git-zen/releases) page to download the pre-compiled binary for your operating system (macOS, Linux, or Windows). Move the executable into a folder in your `PATH` (like `/usr/local/bin`).
 
-### 2. Download and Install
-You can download and compile the CLI binary directly from GitHub using Go:
+### 2. Alternative: Install via Go
+
+If you have Go installed, you can build from source:
 
 ```bash
 go install github.com/achill06/git-zen@latest
 ```
 
-### 3. Environment Path Setup
-Ensure your Go binary directory is included in your system's execution path so your terminal can locate the extension. Add the following line to your profile configuration file (`~/.bashrc` or `~/.zshrc`):
-
-```bash
-export PATH=$PATH:~/go/bin
-```
-
-After adding it, refresh your active terminal window:
-
-```bash
-source ~/.bashrc
-```
+> **Note:** Ensure `~/go/bin` is in your system `PATH`. Add `export PATH=$PATH:~/go/bin` to your `~/.bashrc` or `~/.zshrc`, then run `source ~/.bashrc`.
 
 ---
 
@@ -53,24 +40,28 @@ git zen switch
 
 ### Keyboard Controls
 
-* **Arrow Keys / Ctrl+J / Ctrl+K:** Navigate up and down through the filtered branch list.
-* **Alphanumeric Keys:** Start typing at any time to instantly fuzzy-search and filter your branches.
-* **Enter:** Confirm your selection and immediately perform a `git checkout` onto the selected branch.
-* **Escape / Ctrl+C:** Safely exit the interface without changing your current branch status.
+| Key | Action |
+|-----|--------|
+| Arrow Keys / `Ctrl+J` / `Ctrl+K` | Navigate up and down through the filtered branch list |
+| Alphanumeric Keys | Start typing at any time to instantly fuzzy-search and filter your branches |
+| `Enter` | Confirm your selection and immediately perform a `git checkout` onto the selected branch |
+| `Escape` / `Ctrl+C` | Safely exit the interface without changing your current branch status |
 
 ---
 
 ## Tech Stack
 
-* **Language:** Go (Golang)
-* **CLI Engine:** [Cobra](https://github.com/spf13/cobra)
-* **TUI Architecture:** [Bubble Tea](https://github.com/charmbracelet/bubbletea)
-* **Styling & Layout:** [Lipgloss](https://github.com/charmbracelet/lipgloss)
-* **Fuzzy Filtering:** [Fuzzy](https://github.com/sahilm/fuzzy)
+| Component | Library |
+|-----------|---------|
+| Language | Go (Golang) |
+| CLI Engine | [Cobra](https://github.com/spf13/cobra) |
+| TUI Architecture | [Bubble Tea](https://github.com/charmbracelet/bubbletea) |
+| Styling & Layout | [Lipgloss](https://github.com/charmbracelet/lipgloss) |
+| Fuzzy Filtering | [Fuzzy](https://github.com/sahilm/fuzzy) |
 
 ---
 
 ## Roadmap
 
-* **v1.1:** AI Commit Summarizer (`git zen log`) - Automatically convert cryptic commit histories into polished markdown changelogs using local LLMs.
-* **v2.0:** Background Undo Daemon - A safety net mechanism allowing developers to instantly reverse accidental git operations.
+* **v1.1: AI Commit Summarizer** (`git zen log`) — Automatically convert cryptic commit histories into polished markdown changelogs using local LLMs.
+* **v2.0: Background Undo Daemon** — A safety net mechanism allowing developers to instantly reverse accidental git operations.
