@@ -11,7 +11,8 @@ import (
 
 var switchCmd = &cobra.Command{
 	Use:   "switch",
-	Short: "Fuzzy-finding branch switcher",
+	Short: "Fuzzy search and switch branches",
+	Long:  `Open an interactive dashboard to fuzzy-search your local branches. If authenticated with the GitHub CLI, it will automatically fetch and display live Pull Request statuses in the background.`,
 	Run: func(cmd *cobra.Command, args []string) {
 
 		selectedBranch, err := tui.Run()

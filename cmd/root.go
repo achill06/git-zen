@@ -8,8 +8,8 @@ import (
 
 var rootCmd = &cobra.Command{
 	Use:   "git-zen",
-	Short: "A unified Git CLI extension suite",
-	Long:  `git-zen is an interactive TUI for git branch management, AI commit summaries, and disaster recovery.`,
+	Short: "A blazing-fast TUI for git branch management",
+	Long:  `git-zen - An open-source CLI extension offering an interactive terminal UI  for seamless branch switching and asynchronous PR status tracking.`,
 }
 
 func Execute() {
