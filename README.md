@@ -7,6 +7,7 @@ An open-source Go CLI extension suite offering a blazing-fast, interactive termi
 * **Fuzzy Search:** Instantly filter through massive lists of local branches as you type.
 * **Async GitHub Integration:** Fetches live Pull Request statuses in the background without freezing the UI thread.
 * **Clean Unicode Aesthetics:** Uses minimalist colored status indicators (`● Open`, `● Merged`, `● Closed`) instead of heavy text blocks or emojis to ensure a native terminal look.
+* **Zero-Config Autocompletion:** Native tab-autocompletion for bash, zsh, fish, and PowerShell out of the box.
 * **Graceful Degradation:** Functions flawlessly as a local fuzzy branch switcher even if you are offline or unauthenticated with GitHub.
 * **Native Extensibility:** Extends the native `git` engine—once installed, it integrates smoothly into your daily workflow as a native command.
 
@@ -14,13 +15,28 @@ An open-source Go CLI extension suite offering a blazing-fast, interactive termi
 
 ## Installation
 
-### 1. Download Binaries (Recommended)
+### macOS & Linux (Recommended)
 
-Head over to the [GitHub Releases](https://github.com/achill06/git-zen/releases) page to download the pre-compiled binary for your operating system (macOS, Linux, or Windows). Move the executable into a folder in your `PATH` (like `/usr/local/bin`).
+Install via Homebrew. This method automatically configures shell autocompletions for you.
 
-### 2. Alternative: Install via Go
+```bash
+brew install achill06/tap/git-zen
+```
 
-If you have Go installed, you can build from source:
+### Windows (Recommended)
+
+Install via Scoop:
+
+```powershell
+scoop bucket add git-zen https://github.com/achill06/scoop-bucket.git
+scoop install git-zen
+```
+
+### Alternative Methods
+
+**Manual Binary Download:** Head over to the [GitHub Releases](https://github.com/achill06/git-zen/releases) page to download the pre-compiled binary for your OS and move the executable into a folder in your `PATH`. Run `git-zen completion <your-shell>` to set up autocompletion manually.
+
+**Install via Go:**
 
 ```bash
 go install github.com/achill06/git-zen@latest
@@ -32,11 +48,13 @@ go install github.com/achill06/git-zen@latest
 
 ## Usage
 
-Navigate to any local git repository on your computer and execute:
+Navigate to any local git repository and run:
 
 ```bash
 git zen switch
 ```
+
+> **Tip:** Try typing `git-zen sw` and pressing `<TAB>` for autocompletion.
 
 ### Keyboard Controls
 
