@@ -1,4 +1,4 @@
-# git-zen 🧘‍♂️
+# git-zen
 
 An open-source Go CLI extension suite offering a blazing-fast, interactive terminal user interface (TUI) for git branch management. It replaces standard, unstyled git outputs with an asynchronous dashboard that integrates with the GitHub API to show live PR statuses.
 
