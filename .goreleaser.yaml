@@ -40,7 +40,7 @@ brews:
   - name: git-zen
     repository:
       owner: achill06
-      name: git-zen
+      name: homebrew-tap
     directory: Formula
     homepage: "https://github.com/achill06/git-zen"
     description: "An interactive, fuzzy-searchable git branch manager"
