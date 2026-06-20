@@ -4,7 +4,7 @@
 > A blazing-fast fuzzy git branch switcher with live GitHub PR status in your terminal.
 
 ## Prerequisites
-- Go 1.21+
+- Go 1.24+
 - `gh` CLI installed and authenticated (`gh auth login`)
 
 ## Features (v1.0)
