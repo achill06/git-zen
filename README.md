@@ -48,6 +48,23 @@ go install github.com/achill06/git-zen@latest
 
 > **Note:** Ensure `~/go/bin` is in your system `PATH`. Add `export PATH=$PATH:~/go/bin` to your `~/.bashrc` or `~/.zshrc`, then run `source ~/.bashrc`.
 
+## Upgrading
+
+**Homebrew:** 
+```
+brew upgrade git-zen
+```
+
+**Scoop:** 
+```
+scoop update git-zen
+```
+
+**Go:** 
+```
+go install github.com/achill06/git-zen@latest
+```
+
 ---
 
 ## Usage
