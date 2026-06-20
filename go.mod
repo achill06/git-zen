@@ -1,6 +1,6 @@
 module github.com/achill06/git-zen
 
-go 1.26.4
+go 1.24.5
 
 require (
 	github.com/charmbracelet/bubbles v1.0.0
