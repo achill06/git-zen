@@ -1,15 +1,19 @@
 # git-zen
 ![demo](demo.gif)
-An open-source Go CLI extension suite offering a blazing-fast, interactive terminal user interface (TUI) for git branch management. It replaces standard, unstyled git outputs with an asynchronous dashboard that integrates with the GitHub API to show live PR statuses.
+
+> A blazing-fast fuzzy git branch switcher with live GitHub PR status in your terminal.
+
+## Prerequisites
+- Go 1.21+
+- `gh` CLI installed and authenticated (`gh auth login`)
 
 ## Features (v1.0)
 
 * **Fuzzy Search:** Instantly filter through massive lists of local branches as you type.
 * **Async GitHub Integration:** Fetches live Pull Request statuses in the background without freezing the UI thread.
 * **Clean Unicode Aesthetics:** Uses minimalist colored status indicators (`● Open`, `● Merged`, `● Closed`) instead of heavy text blocks or emojis to ensure a native terminal look.
-* **Zero-Config Autocompletion:** Native tab-autocompletion for bash, zsh, fish, and PowerShell out of the box.
+* **Shell Autocompletion**: bash, zsh, fish, and PowerShell supported via git-zen completion <shell>
 * **Graceful Degradation:** Functions flawlessly as a local fuzzy branch switcher even if you are offline or unauthenticated with GitHub.
-* **Native Extensibility:** Extends the native `git` engine—once installed, it integrates smoothly into your daily workflow as a native command.
 
 ---
 
