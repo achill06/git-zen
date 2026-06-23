@@ -12,7 +12,7 @@
 * **Fuzzy Search:** Instantly filter through massive lists of local branches as you type.
 * **Async GitHub Integration:** Fetches live Pull Request statuses in the background without freezing the UI thread.
 * **Clean Unicode Aesthetics:** Uses minimalist colored status indicators (`● Open`, `● Merged`, `● Closed`) instead of heavy text blocks or emojis to ensure a native terminal look.
-* **Shell Autocompletion**: bash, zsh, fish, and PowerShell supported via git-zen completion <shell>
+* **Shell Autocompletion:** bash, zsh, fish, and PowerShell supported via `git-zen completion <shell>`
 * **Graceful Degradation:** Functions flawlessly as a local fuzzy branch switcher even if you are offline or unauthenticated with GitHub.
 
 ---
@@ -21,7 +21,7 @@
 
 ### macOS & Linux (Recommended)
 
-Install via Homebrew. This method automatically configures shell autocompletions for you.
+Install via Homebrew. Shell autocompletions are configured automatically — no extra steps needed.
 
 ```bash
 brew install achill06/tap/git-zen
@@ -29,18 +29,17 @@ brew install achill06/tap/git-zen
 
 ### Windows (Recommended)
 
-Install via Scoop:
+Install via Scoop, then add completions to your PowerShell profile:
 
 ```powershell
 scoop bucket add git-zen https://github.com/achill06/scoop-bucket.git
 scoop install git-zen
+
+# Add completions to your PowerShell profile:
+echo 'git-zen completion powershell | Out-String | Invoke-Expression' >> $PROFILE
 ```
 
-### Alternative Methods
-
-**Manual Binary Download:** Head over to the [GitHub Releases](https://github.com/achill06/git-zen/releases) page to download the pre-compiled binary for your OS and move the executable into a folder in your `PATH`. Run `git-zen completion <your-shell>` to set up autocompletion manually.
-
-**Install via Go:**
+### Install via Go
 
 ```bash
 go install github.com/achill06/git-zen@latest
@@ -48,20 +47,59 @@ go install github.com/achill06/git-zen@latest
 
 > **Note:** Ensure `~/go/bin` is in your system `PATH`. Add `export PATH=$PATH:~/go/bin` to your `~/.bashrc` or `~/.zshrc`, then run `source ~/.bashrc`.
 
+Then add completions for your shell:
+
+```bash
+# bash
+echo 'source <(git-zen completion bash)' >> ~/.bashrc
+source ~/.bashrc
+
+# zsh
+echo 'source <(git-zen completion zsh)' >> ~/.zshrc
+source ~/.zshrc
+
+# fish
+git-zen completion fish > ~/.config/fish/completions/git-zen.fish
+```
+
+### Manual Binary Download
+
+Head over to the [GitHub Releases](https://github.com/achill06/git-zen/releases) page, download the pre-compiled binary for your OS, and move it into a folder in your `PATH`.
+
+Then add completions for your shell:
+
+```bash
+# bash
+echo 'source <(git-zen completion bash)' >> ~/.bashrc
+source ~/.bashrc
+
+# zsh
+echo 'source <(git-zen completion zsh)' >> ~/.zshrc
+source ~/.zshrc
+
+# fish
+git-zen completion fish > ~/.config/fish/completions/git-zen.fish
+
+# PowerShell
+echo 'git-zen completion powershell | Out-String | Invoke-Expression' >> $PROFILE
+```
+
+---
+
 ## Upgrading
 
-**Homebrew:** 
-```
+**Homebrew:**
+```bash
 brew upgrade git-zen
 ```
 
-**Scoop:** 
-```
+**Scoop:**
+```powershell
 scoop update git-zen
 ```
 
-**Go:** 
-```
+**Go:**
+```bash
 go install github.com/achill06/git-zen@latest
 ```
 
@@ -72,10 +110,10 @@ go install github.com/achill06/git-zen@latest
 Navigate to any local git repository and run:
 
 ```bash
-git zen switch
+git-zen switch
 ```
 
-> **Tip:** Try typing `git-zen sw` and pressing `<TAB>` for autocompletion.
+> **Tip:** With completion set up, type `git-zen sw<TAB>` and it will autocomplete to `git-zen switch`.
 
 ### Keyboard Controls
 
@@ -102,5 +140,5 @@ git zen switch
 
 ## Roadmap
 
-* **v1.1: AI Commit Summarizer** (`git zen log`) — Automatically convert cryptic commit histories into polished markdown changelogs using local LLMs.
+* **v1.1: AI Commit Summarizer** (`git-zen log`) — Automatically convert cryptic commit histories into polished markdown changelogs using local LLMs.
 * **v2.0: Background Undo Daemon** — A safety net mechanism allowing developers to instantly reverse accidental git operations.
