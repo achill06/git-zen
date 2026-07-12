@@ -1,13 +1,15 @@
 # git-zen
+
 ![demo](demo.gif)
 
 > A blazing-fast fuzzy git branch switcher with live GitHub PR status in your terminal.
 
 ## Prerequisites
+
 - Go 1.24+
 - `gh` CLI installed and authenticated (`gh auth login`)
 
-## Features (v1.0)
+## Features
 
 * **Fuzzy Search:** Instantly filter through massive lists of local branches as you type.
 * **Async GitHub Integration:** Fetches live Pull Request statuses in the background without freezing the UI thread.
@@ -89,16 +91,19 @@ echo 'git-zen completion powershell | Out-String | Invoke-Expression' >> $PROFIL
 ## Upgrading
 
 **Homebrew:**
+
 ```bash
 brew upgrade git-zen
 ```
 
 **Scoop:**
+
 ```powershell
 scoop update git-zen
 ```
 
 **Go:**
+
 ```bash
 go install github.com/achill06/git-zen@latest
 ```
@@ -117,24 +122,24 @@ git-zen switch
 
 ### Keyboard Controls
 
-| Key | Action |
-|-----|--------|
-| Arrow Keys / `Ctrl+J` / `Ctrl+K` | Navigate up and down through the filtered branch list |
-| Alphanumeric Keys | Start typing at any time to instantly fuzzy-search and filter your branches |
-| `Enter` | Confirm your selection and immediately perform a `git checkout` onto the selected branch |
-| `Escape` / `Ctrl+C` | Safely exit the interface without changing your current branch status |
+| Key                                 | Action                                                                                    |
+| ----------------------------------- | ----------------------------------------------------------------------------------------- |
+| Arrow Keys /`Ctrl+J` / `Ctrl+K` | Navigate up and down through the filtered branch list                                     |
+| Alphanumeric Keys                   | Start typing at any time to instantly fuzzy-search and filter your branches               |
+| `Enter`                           | Confirm your selection and immediately perform a`git checkout` onto the selected branch |
+| `Escape` / `Ctrl+C`             | Safely exit the interface without changing your current branch status                     |
 
 ---
 
 ## Tech Stack
 
-| Component | Library |
-|-----------|---------|
-| Language | Go (Golang) |
-| CLI Engine | [Cobra](https://github.com/spf13/cobra) |
+| Component        | Library                                                 |
+| ---------------- | ------------------------------------------------------- |
+| Language         | Go (Golang)                                             |
+| CLI Engine       | [Cobra](https://github.com/spf13/cobra)                  |
 | TUI Architecture | [Bubble Tea](https://github.com/charmbracelet/bubbletea) |
-| Styling & Layout | [Lipgloss](https://github.com/charmbracelet/lipgloss) |
-| Fuzzy Filtering | [Fuzzy](https://github.com/sahilm/fuzzy) |
+| Styling & Layout | [Lipgloss](https://github.com/charmbracelet/lipgloss)    |
+| Fuzzy Filtering  | [Fuzzy](https://github.com/sahilm/fuzzy)                 |
 
 ---
 
