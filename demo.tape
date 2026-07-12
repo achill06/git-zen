@@ -12,7 +12,7 @@ Enter
 Sleep 500ms
 
 # Launch git-zen
-Type "git-zen switch"
+Type "git zen switch"
 Enter
 Sleep 3s
 
