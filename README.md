@@ -1,13 +1,10 @@
 # git-zen
 
+Fuzzy git branch switcher with live GitHub PR status in your terminal.
+
+![platform](<https://img.shields.io/badge/platform-macOS%20%7C%20Linux%20%7C%20Windows-blue>) ![go](https://img.shields.io/badge/Go-1.24%2B-00ADD8?logo=go&logoColor=white) ![license](https://img.shields.io/badge/license-MIT-green)
+
 ![demo](demo.gif)
-
-> A blazing-fast fuzzy git branch switcher with live GitHub PR status in your terminal.
-
-## Prerequisites
-
-- Go 1.24+
-- `gh` CLI installed and authenticated (`gh auth login`)
 
 ## Features
 
@@ -16,6 +13,14 @@
 * **Clean Unicode Aesthetics:** Uses minimalist colored status indicators (`● Open`, `● Merged`, `● Closed`) instead of heavy text blocks or emojis to ensure a native terminal look.
 * **Shell Autocompletion:** bash, zsh, fish, and PowerShell supported via `git-zen completion <shell>`
 * **Graceful Degradation:** Functions flawlessly as a local fuzzy branch switcher even if you are offline or unauthenticated with GitHub.
+
+---
+
+## Requirements
+
+* Go 1.24+
+* `gh` CLI installed and authenticated (`gh auth login`)
+* macOS, Linux, or Windows
 
 ---
 
@@ -112,6 +117,14 @@ go install github.com/achill06/git-zen@latest
 
 ## Usage
 
+### CLI Commands
+
+| Command                        | Description                                                     |
+| ------------------------------ | --------------------------------------------------------------- |
+| `git-zen switch`             | Launch the interactive fuzzy branch switcher (TUI)              |
+| `git-zen completion <shell>` | Generate shell autocompletion script (bash/zsh/fish/PowerShell) |
+| `git-zen version`            | Show version information                                        |
+
 Navigate to any local git repository and run:
 
 ```bash
@@ -147,3 +160,9 @@ git-zen switch
 
 * **v1.1: AI Commit Summarizer** (`git-zen log`) — Automatically convert cryptic commit histories into polished markdown changelogs using local LLMs.
 * **v2.0: Background Undo Daemon** — A safety net mechanism allowing developers to instantly reverse accidental git operations.
+
+---
+
+## License
+
+MIT
